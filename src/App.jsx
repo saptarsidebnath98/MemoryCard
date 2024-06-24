@@ -1,10 +1,14 @@
+import Header from "./components/Header.jsx";
+import Main from "./components/Main.jsx";
+
 function App() {
   
   return (
-    <>
-     <h2 className="text-red-500">Memory Card Games hhgpogklg</h2>
-    </>
+    <div className="flex flex-col">
+     <Header/>
+     <Main/>
+    </div>
   )
 }
 
-export default App
+export default App;
