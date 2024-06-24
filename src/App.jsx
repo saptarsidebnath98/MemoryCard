@@ -4,7 +4,7 @@ import Main from "./components/Main.jsx";
 function App() {
   
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col ">
      <Header/>
      <Main/>
     </div>
