@@ -44,7 +44,7 @@ function App() {
   }
   
   return (
-    <div className="w-auto h-screen flex flex-col gap-3 mx-8 my-8 bg-stone-200 rounded-md py-3">
+    <div className="w-auto h-auto flex flex-col gap-3 mx-2 my-4 md:mx-8 md:my-8 bg-stone-200 rounded-md py-3">
      <Header score={storeBtns.length} bestScore={bestScore}/>
      <Main duplicateDummy={shuffledDummy} handleClick={handleClick}/>
      <Footer handleReset={handleReset}/>
