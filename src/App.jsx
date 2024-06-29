@@ -24,17 +24,21 @@ function App() {
 
   //for handling the buttons
   function handleClick(event){
-    if(!storeBtns.includes(event.target.name)){
-      setStoreBtns(prevBtns =>[...prevBtns, event.target.name]);
+    const clickedId = event.currentTarget.id; //because currentTarget is always the element the event handler is directly attached to
 
-      if(storeBtns.length >= bestScore){
-        setBestScore(prevBestScore => prevBestScore + 1);
-      }else if(storeBtns.length < bestScore){
-        setBestScore(bestScore);
+  setStoreBtns((prevBtns) => {
+    if (prevBtns.includes(clickedId)) {
+      return [];
+    } else {
+      const newBtns = [...prevBtns, clickedId];
+      if (newBtns.length > bestScore) {
+        setBestScore(newBtns.length);
       }
-    }else{
-      setStoreBtns([]);
+
+      return newBtns;
     }
+  });
+    
     setShuffledDummy(shuffleArray(shuffledDummy));
   }
   //reset button functionality
