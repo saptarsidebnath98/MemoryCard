@@ -50,6 +50,14 @@ function App() {
   return (
     <div className="w-auto h-auto flex flex-col gap-3 mx-2 my-4 md:mx-8 md:my-8 bg-stone-200 rounded-md py-3">
      <Header score={storeBtns.length} bestScore={bestScore}/>
+     <dialog>
+       <h2>Game Rules:</h2>
+        <ul>
+          <li>Click any unique image , Score will increase.</li>
+          <li>Click any previously clicked image, Score will be 0.</li>
+          <li>This is a Memory Game.</li>
+        </ul>
+     </dialog>
      <Main duplicateDummy={shuffledDummy} handleClick={handleClick}/>
      <Footer handleReset={handleReset}/>
     </div>
