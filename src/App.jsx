@@ -9,7 +9,12 @@ function App() {
   const [bestScore, setBestScore] = useState(0);
   const [shuffledDummy, setShuffledDummy] = useState([...Dummy]);
 
-  // const duplicateDummy = [...Dummy];
+  //for Game rules button:
+  const [showRules, setShowRules] = useState(false);
+
+  function handleRules(){
+    setShowRules(prevState => !prevState);
+  }
 
   // Fisher-Yates shuffle algorithm
    function shuffleArray(array) {
@@ -50,7 +55,23 @@ function App() {
   return (
     <div className="w-auto h-auto flex flex-col gap-3 mx-2 my-4 md:mx-8 md:my-8 bg-stone-200 rounded-md py-3">
      <Header score={storeBtns.length} bestScore={bestScore}/>
-     <p><b>Game Rules: </b>Click unique images, score increases; Click same image, game restarts; Memory Game with pokemons.</p>
+
+     <button 
+      className={`text-stone-100 md:w-48 w-auto font-mono cursor-pointer ${showRules ? 'bg-red-800' : 'bg-green-800'}`}
+      onClick={handleRules}>
+       {showRules ? 'Close' : 'Open'} Game Rules
+      </button>
+     {showRules ? 
+     (<p className="font-mono mx-4"><b>Game Rules: </b>
+     <ul>
+       <li>Click unique Images, <strong>Score increases +1</strong>.</li>
+       <li>Click any previous Image, <strong>Game Restarts</strong>.</li>
+       <li>Memorize every clicked image.</li>
+       <li><strong>Have fun with Pokemons!</strong>  </li>
+     </ul>
+     </p>)
+      : <></>}
+
      <Main duplicateDummy={shuffledDummy} handleClick={handleClick}/>
      <Footer handleReset={handleReset}/>
     </div>
