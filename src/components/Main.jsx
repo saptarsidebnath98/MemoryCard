@@ -9,7 +9,7 @@ export default function Main({ duplicateDummy, handleClick }) {
         id={`${btn.id}`}
         key={btn.id}
         name={btn.name}
-        className="flex justify-center items-center h-20 w-20 md:h-48 md:w-48 bg-stone-400 rounded-md active:bg-slate-700"
+        className="flex justify-center shadow-md items-center h-20 w-20 md:h-48 md:w-48 bg-stone-50 rounded-md active:bg-slate-700"
         onClick={handleClick}>
           <img src={btn.imgURL} alt={btn.id} className="h-16 w-16 md:h-36 md:w-36"/>
         </button>)}

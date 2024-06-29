@@ -53,11 +53,11 @@ function App() {
   }
   
   return (
-    <div className="w-auto h-auto flex flex-col gap-3 mx-2 my-4 md:mx-8 md:my-8 bg-stone-200 rounded-md py-3">
+    <div className="w-auto h-auto flex flex-col gap-3 mx-2 my-4 md:mx-8 md:my-8 bg-red-500 rounded-md py-3">
      <Header score={storeBtns.length} bestScore={bestScore}/>
 
      <button 
-      className={`text-stone-100 md:w-48 w-auto font-mono cursor-pointer ${showRules ? 'bg-red-800' : 'bg-green-800'}`}
+      className={`text-stone-100 md:w-48 w-auto rounded-md font-mono cursor-pointer ${showRules ? 'bg-red-800' : 'bg-green-800'}`}
       onClick={handleRules}>
        {showRules ? 'Close' : 'Open'} Game Rules
       </button>
